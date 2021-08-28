@@ -13,7 +13,7 @@ function consolemc() {
 
 while true
 do
-menuitem=$(dialog --menu "MineFra.me Server Menu\nVersion: 1.0-release" 20 60 10 "Start" "Start your Minecraft server" "Stop" "Stop your Minecraft server" "Console" "Enter Console" "Exit" "Exit the control panel" --output-fd 1);
+menuitem=$(dialog --menu "MineFra.me Server Menu\nVersion: 1.0-release\n$(cat motd)" 20 60 10 "Start" "Start your Minecraft server" "Stop" "Stop your Minecraft server" "Console" "Enter Console" "Exit" "Exit the control panel" --output-fd 1);
 
 case $menuitem in
         Start) startmc;;
