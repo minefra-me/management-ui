@@ -1,10 +1,10 @@
 #!/bin/bash
 function startmc() {
-/usr/bin/screen -S minecraft -d -m bash -c "./start.sh"
+  /usr/bin/screen -S minecraft -d -m bash -c "./start.sh"
 }
 
 function stopmc() {
-/usr/bin/screen -X -S minecraft quit
+  for session in $(screen -ls | grep -o '[0-9]*\.minecraft'); do screen -S "${session}" -X quit; done
 }
 
 function consolemc() {
